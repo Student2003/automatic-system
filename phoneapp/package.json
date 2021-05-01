@@ -1,0 +1,22 @@
+{
+  "name": "phoneapp",
+  "version": "1.0.0",
+  "description": "Phone Kata",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Student2003/automatic-system.git"
+  },
+  "keywords": [
+    "phonenook"
+  ],
+  "author": "Student 2003",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Student2003/automatic-system/issues"
+  },
+  "homepage": "https://github.com/Student2003/automatic-system#readme"
+}
