@@ -1,12 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import './index.css';
-import App from './App';
+import Homepage from './component/homepage';
+import NewEntry from './component/newEntry';
+import EditEntry from './component/editEntry';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Switch>
+        <Route path="/edit_entry">
+          <EditEntry />
+        </Route>
+        <Route path="/new_entry">
+          <NewEntry />
+        </Route>
+        <Route path="/">
+          <Homepage />
+        </Route>
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
