@@ -31,9 +31,8 @@ exports.create = (req, res) => {
       });
   };
 
-  
 exports.update = (req, res) => {
-    Contact.update(req.body, {where : {id : req.params.id}})
+    Contact.update(req.body, {where : {id : req.body.id}})
       .then(data =>{
         if (data == 1){
           res.send(data)
@@ -45,4 +44,17 @@ exports.update = (req, res) => {
             err.message || "Some error occurred while creating the Contact."
         });
       });
-  }
+  };
+
+exports.findAll = (req, res) => {
+  Contact.findAll({ condition: req.query.title })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tutorials."
+      });
+    });
+};

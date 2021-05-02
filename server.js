@@ -42,10 +42,15 @@ app.get('/', function (req,res) {
   res.sendFile(path + "public/index.html");
 });
 
-app.get('/create', function (req,res) {
+app.post('/create', function (req,res) {
   controller.create(req, res);
-  res.send(res)
+  res.send("new user created");
 });
+
+app.put('/edit', function (req, res){
+  controller.update(req, res);
+  res.send("user data updated")
+})
 
 require("./phoneapp/routes/route")(app);
 

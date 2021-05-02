@@ -3,7 +3,7 @@ import ContactForm from './contactForm';
 
 let NewEntry = ()=>{
     return <div>
-        <ContactForm first_name={""} last_name={""} number={""}/>
+        <ContactForm first_name={""} last_name={""} number={""} identifiant={0}/>
     </div>
 }
 
