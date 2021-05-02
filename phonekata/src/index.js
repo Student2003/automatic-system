@@ -1,4 +1,4 @@
-let React = require('react').default;
+let React = require('react');
 let ReactDOM = require('react-dom');
 let ReactRouterDom = require('react-router-dom');
 let Router = ReactRouterDom.BrowserRouter;
@@ -10,7 +10,7 @@ let NewEntry = require('./component/newEntry').default;
 let EditEntry = require('./component/editEntry').default;
 let reportWebVitals = require('./reportWebVitals').default;
 
-console.log(EditEntry)
+console.log(ReactDOM)
 
 ReactDOM.render(
   <React.StrictMode>

@@ -10,7 +10,7 @@ const app = express();
 app.use(express.static(path));
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:3000"
 };
 
 app.use(cors(corsOptions));
@@ -39,7 +39,10 @@ db.sequelize.sync();
 
 app.get('/', function (req,res) {
   res.sendFile(path + "public/index.html");
-  require(path + "src/index.js");
+});
+
+app.get('/test', function (req,res) {
+  res.send("hello world!");
 });
 
 require("./phoneapp/routes/route")(app);
