@@ -2,7 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-const path = __dirname + '/phonekata/public/';
+const path = __dirname + '/phonekata/';
+console.log(path)
 
 const app = express();
 
@@ -13,6 +14,14 @@ var corsOptions = {
 };
 
 app.use(cors(corsOptions));
+
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
@@ -29,7 +38,8 @@ db.sequelize.sync();
 // });
 
 app.get('/', function (req,res) {
-  res.sendFile(path + "index.html");
+  res.sendFile(path + "public/index.html");
+  require(path + "src/index.js");
 });
 
 require("./phoneapp/routes/route")(app);

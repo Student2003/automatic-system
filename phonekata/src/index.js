@@ -1,15 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-import './index.css';
-import Homepage from './component/homepage';
-import NewEntry from './component/newEntry';
-import EditEntry from './component/editEntry';
-import reportWebVitals from './reportWebVitals';
+let React = require('react').default;
+let ReactDOM = require('react-dom');
+let ReactRouterDom = require('react-router-dom');
+let Router = ReactRouterDom.BrowserRouter;
+let Switch = ReactRouterDom.Switch;
+let Route = ReactRouterDom.Route;
+let css = require('./index.css');
+let Homepage = require('./component/homepage').default;
+let NewEntry = require('./component/newEntry').default;
+let EditEntry = require('./component/editEntry').default;
+let reportWebVitals = require('./reportWebVitals').default;
+
+console.log(EditEntry)
 
 ReactDOM.render(
   <React.StrictMode>

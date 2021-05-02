@@ -31,8 +31,8 @@ exports.create = (req, res) => {
       });
   };
 
-  exports.update = (req, res) => {
-
+  
+exports.update = (req, res) => {
     Contact.update(req.body, {where : {id : req.params.id}})
       .then(data =>{
         if (data == 1){
