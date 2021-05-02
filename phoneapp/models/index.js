@@ -20,6 +20,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.tutorials = require("./model.js")(sequelize, Sequelize);
+db.contacts = require("./model.js")(sequelize, Sequelize);
 
 module.exports = db;
