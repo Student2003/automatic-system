@@ -20,7 +20,7 @@ let ContactForm = (props)=>{
         <label className={"Number"}>Number :</label>
         <input type={"text"} name={"number"} value={props.number}/>
         <button onClick={request}>Send</button>
-    </div>
+    </div>;
 }
 
 export default ContactForm;

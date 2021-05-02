@@ -30,6 +30,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const db = require("./phoneapp/models");
+const controller = require("./phoneapp/controllers/controller");
 
 db.sequelize.sync();
 // // drop the table if it already exists
@@ -41,8 +42,9 @@ app.get('/', function (req,res) {
   res.sendFile(path + "public/index.html");
 });
 
-app.get('/test', function (req,res) {
-  res.send("hello world!");
+app.get('/send', function (req,res) {
+  controller.create(req, res);
+  res.send(res)
 });
 
 require("./phoneapp/routes/route")(app);
