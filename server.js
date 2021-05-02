@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-const path = __dirname + '/phonekata/public/index.html';
+const path = __dirname + '/phonekata/public/';
 
 const app = express();
 
