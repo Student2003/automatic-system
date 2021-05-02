@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const db = require("./app/models");
+const db = require("./phoneapp/models");
 
 db.sequelize.sync();
 // // drop the table if it already exists
@@ -32,7 +32,7 @@ app.get('/', function (req,res) {
   res.sendFile(path + "index.html");
 });
 
-require("./app/routes/route")(app);
+require("./phoneapp/routes/route")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
