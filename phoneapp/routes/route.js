@@ -1,10 +1,12 @@
+const { contacts } = require("../models/index.js");
+
 module.exports = app => {
     const tutorials = require("../controllers/controller.js");
   
     var router = require("express").Router();
   
-    // Create a new Tutorial
-    router.post("/", tutorials.create);
+    // Create a new Contact
+    router.post("/", contacts.create);
   
     // Retrieve all Tutorials
     router.get("/", tutorials.findAll);
