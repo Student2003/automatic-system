@@ -42,7 +42,7 @@ app.get('/', function (req,res) {
   res.sendFile(path + "public/index.html");
 });
 
-app.get('/send', function (req,res) {
+app.get('/create', function (req,res) {
   controller.create(req, res);
   res.send(res)
 });
